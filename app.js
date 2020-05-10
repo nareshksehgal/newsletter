@@ -32,7 +32,7 @@ const inputEmail = req.body.inputEmail;
   var jsonData = JSON.stringify(data);
   const options = {
     method: "POST",
-    auth: "nareshksehgal:4ebaf8b6839a1c68c2084ef56b8a43f2-us18"
+    auth: "nareshksehgal:<mykeyID>"
   }
 
   const request = https.request(url, options, function(response){
