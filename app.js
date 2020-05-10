@@ -16,18 +16,18 @@ const firstName = req.body.firstName;
 const lastName = req.body.lastName;
 const inputEmail = req.body.inputEmail;
 //console.log(firstName, lastName, inputEmail);
-var data = {
-  members: [
-    {
-      email_address: inputEmail,
-      status: "subscribed",
-      merge_fields: {
-        FNAME: firstName,
-        LNAME: lastName
+  var data = {
+    members: [
+      {
+        email_address: inputEmail,
+        status: "subscribed",
+        merge_fields: {
+          FNAME: firstName,
+          LNAME: lastName
+        }
       }
-    }
-  ]
-}
+    ]
+  }
   const url = 'https://us18.api.mailchimp.com/3.0/lists/65fb6018cb';
   var jsonData = JSON.stringify(data);
   const options = {
@@ -44,7 +44,7 @@ var data = {
       res.sendFile(__dirname+ "/failure.html");
   }
 
-  response.on("data", function(data){
+ response.on("data", function(data){
     console.log(JSON.parse(data));
   });
 
